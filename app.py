@@ -19,8 +19,8 @@ def main():
 
     # Create an instance of MelodyGenerator
     generator = MelodyGenerator(
-        model_path="G:\\new\\Model_1",
-        kern_files_directory="G:\\new\\kern file_1"
+        model_path="Model_1",  #change where the Model is located.
+        kern_files_directory="kern file_1" # change where the .krn files are located.
     )
 
     # Add some more vertical space
@@ -36,12 +36,12 @@ def main():
             generated_melody = generator.generate_melody()
 
             # Save the generated melody as a MIDI file
-            output_file_path = "G:/new/OUTPUTSTR1.mid"
+            output_file_path = "OUTPUT.mid" # change the path where you want to save the op.
             generated_melody.write('midi', fp=output_file_path)
 
             # Convert MIDI to MP3
             converter = MidiToMp3Converter()
-            mp3_output_path = "G:/new/output.mp3"
+            mp3_output_path = "output.mp3"
             converter.generate_audio_from_midi(output_file_path, mp3_output_path)
 
         # Add some vertical space
